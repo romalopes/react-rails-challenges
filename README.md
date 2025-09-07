@@ -35,3 +35,5 @@ rails g migration addJtiToUsers jti:string:index:unique
 #### API for Users
 
 #### Verify API with postman
+
+c5c08c4d67f4ab9ca09fca00ab0f9c9552cb5fe3ca591f32366997b146657a88c139928fa82c375d846c6375c4555b0c61f62084d16dcbbd7b0c271b28ef49f0

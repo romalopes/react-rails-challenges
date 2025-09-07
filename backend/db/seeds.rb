@@ -18,12 +18,21 @@ Challenge.destroy_all
 #   )
 # end
 
+
+current_user = User.find_by(email: "roma@lopes.com")
+if current_user.nil?
+  current_user = User.create!(email: "roma@lopes.com", password: "password", password_confirmation: "password", name: "romalopes")
+end
+  
+  
+
 20.times do |i|
   puts "Creating challenge #{i + 1}"
   Challenge.create!(
     title: Faker::Lorem.sentence(word_count: 3),
     description: Faker::Lorem.sentence(word_count: 10),
     start_date: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now + 1.day),
-    end_date: Faker::Time.between(from: DateTime.now + 2.day, to: DateTime.now + 10.day)
+    end_date: Faker::Time.between(from: DateTime.now + 2.day, to: DateTime.now + 10.day),
+    user_id: current_user.id
   )
 end
