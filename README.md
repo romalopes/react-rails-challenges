@@ -37,3 +37,23 @@ rails g migration addJtiToUsers jti:string:index:unique
 #### Verify API with postman
 
 c5c08c4d67f4ab9ca09fca00ab0f9c9552cb5fe3ca591f32366997b146657a88c139928fa82c375d846c6375c4555b0c61f62084d16dcbbd7b0c271b28ef49f0
+
+#### Creating a react code.
+
+```shell
+$ npm create vite@latest frontend
+
+Install Tailwind css with vite
+
+$ npm install @headlessui/react
+$ npm install @heroicons/react
+```
+
+#### Routing
+
+```shell
+$ npm install react-router-dom
+$ npm i react-router @react-router/node
+$ npm i -D @react-router/dev vite
+$ npm i react-cookie
+```
