@@ -143,7 +143,7 @@ const features = [
 
 const Features = () => {
   return (
-    <div className="bg-whte">
+    <div className="bg-white">
       <div className="mt-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <h3 className="text-xl font-bold">Incentives</h3>
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">

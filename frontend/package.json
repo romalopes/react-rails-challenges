@@ -14,11 +14,17 @@
     "@heroicons/react": "^2.2.0",
     "@react-router/node": "^7.8.2",
     "@tailwindcss/vite": "^4.1.13",
+    "@tinymce/tinymce-react": "^6.3.0",
+    "dayjs": "^1.11.12",
+    "draft-js": "^0.11.7",
     "js-cookie": "^3.0.5",
     "prop-types": "^15.8.1",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router": "^7.8.2",
+    "react-tailwindcss-datepicker": "^2.0.0",
+    "slate": "^0.118.1",
+    "slate-react": "^0.117.4",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {

@@ -10,6 +10,7 @@ import { StrictMode } from "react";
 import App from "./App.jsx";
 import Authentication, { PageType } from "./pages/Authentication.jsx";
 import React, { Component } from "react";
+import AddChallenge from "./pages/AddChallenge.jsx";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -47,17 +48,19 @@ const router = createBrowserRouter([
     path: "/register",
     element: <Authentication pageType={PageType.register} />,
   },
+  {
+    path: "/add-challenge",
+    element: <AddChallenge />,
+  },
 ]);
 const root = document.getElementById("root");
 
 createRoot(root).render(
   <StrictMode>
-    {/* <ErrorBoundary> */}
-    {/* <App /> */}
-    {/* <CookiesProvider defaultSetOptions={{ path: "/" }}> */}
-    {/* <App /> */}
-    <RouterProvider router={router} />
-    {/* </CookiesProvider> */}
-    {/* </ErrorBoundary> */}
+    <ErrorBoundary>
+      {/* <App /> */}
+      <RouterProvider router={router} />
+      {/* </CookiesProvider> */}
+    </ErrorBoundary>
   </StrictMode>
 );
