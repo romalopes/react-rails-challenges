@@ -5,6 +5,7 @@ import { Link } from "react-router";
 import { fetchLogin, fetchRegister } from "../apis/authentication";
 import { useNavigate } from "react-router";
 import Cookies from "js-cookie";
+import Button from "../components/Button";
 
 const initialErrorState = {
   name: "",
@@ -148,8 +149,8 @@ function Authentication({ pageType }) {
     <div>
       <h1>This is Authentication page</h1>
 
-      <div className="bg-whte">
-        <div className="mt-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+      <div className="bg-white">
+        <div className="mt-auto max-w-7xl px-2 sm:px-6 lg:px-8 py-2">
           <h3 className="text-xl font-bold">
             {pageType === PageType.login ? "Login" : "Register"}
           </h3>
@@ -168,7 +169,8 @@ function Authentication({ pageType }) {
               </Link>
             </p>
           )}
-          <form onSubmit={handleSubmit}>
+          {/* <form onSubmit={handleSubmit}> */}
+          <form>
             {pageType === PageType.register && (
               <div className="flex mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 <input
@@ -212,12 +214,17 @@ function Authentication({ pageType }) {
               )}
             </div>
 
-            <button
+            <Button onClick={handleSubmit}>
+              {pageType === PageType.login ? "Login" : "Register"}
+            </Button>
+
+            {/* <button
               type="submit"
               className="bg-indigo-500 mt-10 hover:bg-indigo-600 px-3 py-2 rounded text-white"
             >
               {pageType === PageType.login ? "Login" : "Register"}
-            </button>
+            </button> */}
+
             {errors.api && (
               <p className="text-sm text-medium text-red-500 mt-1">
                 {errors.api}

@@ -42,6 +42,12 @@ function Navbar({ name, surname }) {
   // const Navbar = ({ name, surname }) => {
   const navigation = [
     { name: "Dashboard", href: "/", current: true, onClick: null },
+    {
+      name: "Add Challenge",
+      href: "/add-challenge",
+      current: false,
+      onClick: null,
+    },
     { name: "Login", href: "/login", current: false, onClick: null },
     { name: "Register", href: "/register", current: false, onClick: null },
     { name: "Logout", href: "#", current: false, onClick: handleLogout },
