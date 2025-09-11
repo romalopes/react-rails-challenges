@@ -59,8 +59,6 @@ const router = createBrowserRouter([
 
   { path: "/challenges", element: <ChallengeList /> },
 
-  { path: "/challenges", element: <ChallengeList /> }, // { path: "/challenges/:id", element: <ChallengeDetails /> },
-
   { path: "/challenges/:id/edit", element: <EditChallengeForm /> },
 ]);
 const root = document.getElementById("root");
@@ -68,8 +66,8 @@ const root = document.getElementById("root");
 createRoot(root).render(
   <StrictMode>
     <ErrorBoundary>
-      {/* <App /> */}
-      <RouterProvider router={router} />
+      <App />
+      {/* <RouterProvider router={router} /> */}
       {/* </CookiesProvider> */}
     </ErrorBoundary>
   </StrictMode>

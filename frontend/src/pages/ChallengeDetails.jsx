@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useLocation, useParams, useNavigate, Link } from "react-router-dom";
 import Cookies from "js-cookie";
 // import "./ChallengeDetails.css";
 import {
@@ -9,6 +9,10 @@ import {
 import Button from "../components/Button";
 
 function ChallengeDetails() {
+  const { pathname } = useLocation();
+
+  console.log("location:", location);
+  console.log("location:", location.search);
   const { id } = useParams(); // ✅ pega o id da URL
   const [challenge, setChallenge] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -16,6 +20,10 @@ function ChallengeDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
+    const segments = pathname.split("/");
+    const id = segments[segments.length - 1];
+    console.log("id:", id);
+
     const fechCurrentChallenge = async () => {
       try {
         // const response = await fetch("${API_URL}/${id}");
@@ -74,7 +82,7 @@ function ChallengeDetails() {
         )} */}
         </div>
         <p>{challenge.description}</p>
-        <Link to="/"> Back to challenges </Link>
+        <Link to="/challenges"> Back to challenges </Link>
         {" | "}
         {/* <Link to={`/challenges/${challenge.id}/edit`}> Edit challenge </Link> */}
         {" | "}
