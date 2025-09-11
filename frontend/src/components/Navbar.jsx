@@ -48,6 +48,12 @@ function Navbar({ name, surname }) {
       current: false,
       onClick: null,
     },
+    {
+      name: "Challenges",
+      href: "/challenges",
+      current: false,
+      onClick: null,
+    },
     { name: "Login", href: "/login", current: false, onClick: null },
     { name: "Register", href: "/register", current: false, onClick: null },
     { name: "Logout", href: "#", current: false, onClick: handleLogout },

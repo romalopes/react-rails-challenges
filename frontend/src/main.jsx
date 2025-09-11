@@ -11,6 +11,9 @@ import App from "./App.jsx";
 import Authentication, { PageType } from "./pages/Authentication.jsx";
 import React, { Component } from "react";
 import AddChallenge from "./pages/AddChallenge.jsx";
+import ChallengeDetails from "./pages/ChallengeDetails.jsx";
+import ChallengeList from "./pages/ChallengesList.jsx";
+import EditChallengeForm from "./pages/EditChallengeForm.jsx";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -52,6 +55,13 @@ const router = createBrowserRouter([
     path: "/add-challenge",
     element: <AddChallenge />,
   },
+  { path: "/challenges/:id", element: <ChallengeDetails /> },
+
+  { path: "/challenges", element: <ChallengeList /> },
+
+  { path: "/challenges", element: <ChallengeList /> }, // { path: "/challenges/:id", element: <ChallengeDetails /> },
+
+  { path: "/challenges/:id/edit", element: <EditChallengeForm /> },
 ]);
 const root = document.getElementById("root");
 
