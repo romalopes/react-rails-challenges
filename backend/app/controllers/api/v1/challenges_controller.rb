@@ -1,7 +1,7 @@
 
 class Api::V1::ChallengesController < ApplicationController
   before_action :show_current_user
-  before_action :authenticate_user! #, only: %i[create update destroy]
+  before_action :authenticate_user!, only: %i[create update destroy]
   before_action :set_challenge, only: %i[ show update destroy ]
   
 
@@ -19,7 +19,10 @@ class Api::V1::ChallengesController < ApplicationController
     puts "\n\n\n\nuser_signed_in?:#{user_signed_in?}---- current_user:#{current_user}\n\n\n"
     puts "Current user: #{current_user.inspect}"
 
-      raise "Authentication failed" unless user_signed_in?
+      # raise "Authentication failed" unless user_signed_in?
+      puts "1 - Authentication failed"
+      render json: {message: "Authentication failed"}, status: :unauthorized unless user_signed_in?
+      puts "2 - Authentication failed"
   end
   # GET /challenges
   def index
@@ -42,7 +45,8 @@ class Api::V1::ChallengesController < ApplicationController
       # render json: @challenge, status: :created, location: @challenge
       render json: @challenge, status: :created, location: api_v1_challenge_url(@challenge.id)
     else
-      render json: @challenge.errors, status: :unprocessable_content
+      puts @challenge.errors.full_messages
+      render json: {message: "Failed to add challenge", errors: @challenge.errors}, status: :unauthorized # :unprocessable_content
     end
   end
 

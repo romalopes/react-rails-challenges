@@ -1,5 +1,4 @@
 import { BASE_URL } from "./constants";
-import Cookies from "js-cookie";
 
 const fetchLogin = async (bodyObject) => {
   try {
